@@ -1,0 +1,10 @@
+Railsプロジェクトの作成
+$ rails _5.2.2_ new chouchou --database=mysql --skip-test
+
+バージョン管理を開始
+$ git init
+
+ここまでの内容をコミット
+$ git add .
+$ git commit -m "init Rails Project"
+
