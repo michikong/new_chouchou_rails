@@ -16,3 +16,6 @@ $ rails db:create
 サーバを起動してデータベースの接続を確認
 $ sudo service mysqld start
 $ rails s
+
+Rails と MySQLの連携設定を確認
+config/database.yml
