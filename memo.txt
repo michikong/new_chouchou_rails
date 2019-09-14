@@ -8,3 +8,12 @@ $ git init
 $ git add .
 $ git commit -m "init Rails Project"
 
+
+▼データベースを作成
+
+$ rails db:create
+
+MySQL起動
+$ sudo service mysqld start
+
+
