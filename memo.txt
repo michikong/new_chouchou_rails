@@ -13,7 +13,6 @@ $ git commit -m "init Rails Project"
 
 $ rails db:create
 
-MySQL起動
+サーバを起動してデータベースの接続を確認
 $ sudo service mysqld start
-
-
+$ rails s
