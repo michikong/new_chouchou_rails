@@ -111,3 +111,19 @@ config/routes.rb 完成
 
 Router の確認
 $ rails routes
+
+
+Controller の生成
+Helper と CSS と JavaScript を自動生成しないオプション
+$ rails g controller Contacts --no-helper --no-assets
+$ rails g controller Inquiries --no-helper --no-assets
+
+
+
+
+Viewを作成
+
+$ touch app/views/contacts/index.html.erb
+app/views/contacts/show.html.erb
+app/views/contacts/new.html.erb
+app/views/contacts/edit.html.erb

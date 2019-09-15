@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'contact#index'
+  root to: 'contacts#index'
  
   resources :contacts
   resources :inquiries
