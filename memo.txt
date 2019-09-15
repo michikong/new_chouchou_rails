@@ -19,3 +19,79 @@ $ rails s
 
 Rails と MySQLの連携設定を確認
 config/database.yml
+
+モデルを作成(※マイグレーションファイルも)
+
+g は generate の略
+$ rails g model Contact content:string
+$ rails g model Inquiry content:string
+
+間違えた場合戻る
+$ rails db:migrate:reset
+
+一つ戻る
+$ bundle exec rake db:rollback
+マイグレート
+$ bundle exec rake db:migrate
+
+
+
+マイグレーションの実行(MySQL を起動してから)
+$ rails db:migrate
+
+▼マイグレーションの確認
+db/schema.rb
+
+MySQL ログイン
+$ mysql -u root
+
+データベースの選択
+mysql> use DB名
+
+テーブル一覧確認（tasksテーブルが作成されているか確認）
+mysql> show tables;
+
+テーブル設計の確認
+mysql> describe テーブル名;
+
+
+mysql> describe inquiries;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| content        | varchar(255) | YES  |     | NULL    |                |
+| name           | varchar(255) | YES  |     | NULL    |                |
+| ruby           | varchar(255) | YES  |     | NULL    |                |
+| email          | varchar(255) | YES  |     | NULL    |                |
+| confirm_email1 | varchar(255) | YES  |     | NULL    |                |
+| confirm_email2 | varchar(255) | YES  |     | NULL    |                |
+| contact        | varchar(255) | YES  |     | NULL    |                |
+| created_at     | datetime     | NO   |     | NULL    |                |
+| updated_at     | datetime     | NO   |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+10 rows in set (0.00 sec)
+
+mysql> describe contacts;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| content        | varchar(255) | YES  |     | NULL    |                |
+| name           | varchar(255) | YES  |     | NULL    |                |
+| ruby           | varchar(255) | YES  |     | NULL    |                |
+| phone_number   | int(11)      | YES  |     | NULL    |                |
+| email          | varchar(255) | YES  |     | NULL    |                |
+| age            | int(11)      | YES  |     | NULL    |                |
+| blood          | varchar(255) | YES  |     | NULL    |                |
+| gender         | varchar(255) | YES  |     | NULL    |                |
+| payment        | int(11)      | YES  |     | NULL    |                |
+| contact        | varchar(255) | YES  |     | NULL    |                |
+| confirm_email1 | varchar(255) | YES  |     | NULL    |                |
+| confirm_email2 | varchar(255) | YES  |     | NULL    |                |
+| created_at     | datetime     | NO   |     | NULL    |                |
+| updated_at     | datetime     | NO   |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+15 rows in set (0.00 sec)
+
+mysql> 
