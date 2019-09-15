@@ -95,3 +95,19 @@ mysql> describe contacts;
 15 rows in set (0.00 sec)
 
 mysql> 
+
+
+
+
+config/routes.rb 完成
+
+   Rails.application.routes.draw do
+     root to: 'contact#index'
+    
+     resources :contacts
+     resources :inquiries
+   end
+   
+
+Router の確認
+$ rails routes
