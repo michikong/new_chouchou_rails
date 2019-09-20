@@ -1,0 +1,67 @@
+<h1>メッセージ新規作成ページ</h1>
+
+<%= form_with(model: @contact, local: true) do |f| %>
+  <li>
+    <%= f.label :content, 'メッセージ' %>
+    <%= f.text_field :content %>
+  </li>
+  
+  <li>
+    <%= f.label :name, '質問内容' %>
+    <%= f.text_field :name %>
+  </li>
+  
+  <li>
+    <%= f.label :ruby, '質問内容' %>
+    <%= f.text_field :ruby %>
+  </li>
+  
+  <li>
+    <%= f.label :phone_number, '質問内容' %>
+    <%= f.text_field :phone_number %>
+  </li>
+  
+  <li>
+    <%= f.label :email, '質問内容' %>
+    <%= f.text_field :email %>
+  </li>
+  
+  <li>
+    <%= f.label :age, '質問内容' %>
+    <%= f.text_field :age %>
+  </li>
+  
+  <li>
+    <%= f.label :blood, '質問内容' %>
+    <%= f.text_field :blood %>
+  </li>
+  
+  <li>
+    <%= f.label :gender, '質問内容' %>
+    <%= f.text_field :gender %>
+  </li>
+  
+  <li>
+    <%= f.label :payment, '質問内容' %>
+    <%= f.text_field :payment %>
+  </li>
+  
+  <li>
+    <%= f.label :contact, '質問内容' %>
+    <%= f.text_field :contact %>
+  </li>
+  
+  <li>
+    <%= f.label :confirm_email1, '質問内容' %>
+    <%= f.text_field :confirm_email1 %>
+  </li>
+  
+  <li>
+    <%= f.label :confirm_email2, '質問内容' %>
+    <%= f.text_field :confirm_email2 %>
+  </li>
+  
+  <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '一覧に戻る', contacts_path %>

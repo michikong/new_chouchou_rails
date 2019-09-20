@@ -1,0 +1,20 @@
+<h1>id: <%= @contact.id %> のメッセージ詳細ページ</h1>
+
+<li>ID : <%= @contact.id %></li>
+<li>メッセージ : <%= @contact.content %></li>
+<li>氏名 : <%= @contact.name %></li>
+<li>フリガナ : <%= @contact.ruby %></li>
+<li>電話番号 : <%= @contact.phone_number %></li>
+<li>メールアドレス : <%= @contact.email %></li>
+<li>年齢 : <%= @contact.age %></li>
+<li>血液型 : <%= @contact.blood %></li>
+<li>性別 : <%= @contact.gender %></li>
+<li>売り上げ : <%= @contact.payment %></li>
+<li>質問内容 : <%= @contact.contact %></li>
+<li>メアド@前 : <%= @contact.confirm_email1 %></li>
+<li>メアド@後: <%= @contact.confirm_email2 %></li>
+<li>投稿日時 : <%= @contact.created_at %></li>
+<li>編集日時 : <%= @contact.updated_at %></li>
+
+
+<%= link_to '一覧に戻る', contacts_path %>
