@@ -14,10 +14,10 @@ class ContactsController < ApplicationController
    def create
       @contact = Contact.new(contact_params)
       if @contact.save
-         flash[:success] = 'Contact が正常に投稿されました'
+         flash[:success] = 'Contact が正常に保存されました'
          redirect_to @contact
       else
-         flash.now[:danger] = 'Contact が投稿されませんでした'
+         flash.now[:danger] = 'Contact が保存されませんでした'
          render :new
       end
    end
