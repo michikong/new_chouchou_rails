@@ -4,7 +4,22 @@ class ContactsController < ApplicationController
    end
 
    def show
-      @contact = Contact.find(params[:id])
+      @contactid = Contact.find(params[:id])
+
+      @contact = Contact.new({
+      content: params[:content],
+      name: params[:name],
+      ruby: params[:ruby],
+      phone_number: params[:phone_number],
+      email: params[:email],
+      age: params[:age],
+      blood: params[:blood],
+      gender: params[:gender],
+      payment: params[:payment],
+      contact: params[:contact],
+      confirm_email1: params[:confirm_email1],
+      confirm_email2: params[:confirm_email2]
+      })
    end
 
    def new
