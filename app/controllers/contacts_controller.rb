@@ -18,10 +18,10 @@ class ContactsController < ApplicationController
       @contact = Contact.new(contact_params)
       # binding.pry
       if @contact.save
-         flash[:success] = 'Contact が正常に保存されました'
+         flash[:success] = '内容がが正常に保存されました'
          redirect_to @contact
       else
-         flash.now[:danger] = 'Contact が保存されませんでした'
+         flash.now[:danger] = '内容が保存されませんでした'
          render :new
       end
    end
