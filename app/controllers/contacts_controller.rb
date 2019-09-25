@@ -1,33 +1,22 @@
+require 'pry'
+# binding.pry
+
 class ContactsController < ApplicationController
    def index
       @contacts = Contact.all
    end
 
    def show
-      @contactid = Contact.find(params[:id])
-
-      @contact = Contact.new({
-      content: params[:content],
-      name: params[:name],
-      ruby: params[:ruby],
-      phone_number: params[:phone_number],
-      email: params[:email],
-      age: params[:age],
-      blood: params[:blood],
-      gender: params[:gender],
-      payment: params[:payment],
-      contact: params[:contact],
-      confirm_email1: params[:confirm_email1],
-      confirm_email2: params[:confirm_email2]
-      })
+      @contact = Contact.find(params[:id])
    end
 
    def new
-      @contact = Contact.new
+      @contacts = Contact.new
    end
 
    def create
       @contact = Contact.new(contact_params)
+      # binding.pry
       if @contact.save
          flash[:success] = 'Contact が正常に保存されました'
          redirect_to @contact
@@ -52,6 +41,17 @@ class ContactsController < ApplicationController
    
    # Strong Parameter
    def contact_params
-      params.require(:contact).permit(:contact)
+      params.require(:contact).permit(
+         :content,
+         :name, 
+         :ruby,
+         :email,
+         :age,
+         :blood,
+         :gender,
+         :payment,
+         :contact,
+         :confirm_email1,
+         :confirm_email2)
    end
 end

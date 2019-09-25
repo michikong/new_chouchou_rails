@@ -1,11 +1,10 @@
 <h1>メッセージ新規作成ページ</h1>
 
-<%= form_with(model: @contact, local: true) do |f| %>
+<%= form_with(model: @contacts, local: true) do |f| %>
   <li>
     <%= f.label :content, 'メッセージ' %>
     <%= f.text_field :content %>
   </li>
-  
   <li>
     <%= f.label :name, '氏名' %>
     <%= f.text_field :name %>
@@ -61,6 +60,7 @@
     <%= f.text_field :confirm_email2 %>
   </li>
   
+
   <%= f.submit '投稿' %>
 <% end %>
 
