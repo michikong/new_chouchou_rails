@@ -43,6 +43,11 @@ class ContactsController < ApplicationController
    end
 
    def destroy
+      @contact = Contact.find(params[:id])
+      @contact.destroy
+      
+      flash[:success] = "params[:id]の内容は正常に削除されました"
+      redirect_to contacts_url
    end
    
    # 以降に定義されたメソッドがこのクラス内でのみ使用することを明示
