@@ -31,6 +31,15 @@ class ContactsController < ApplicationController
    end
 
    def update
+       @contact = Contact.find(params[:id])
+
+      if @contact.update(contact_params)
+         flash[:success] = '内容は正常に更新されました'
+         redirect_to @contact
+      else
+         flash.now[:danger] = '内容は更新されませんでした'
+         render :edit
+      end
    end
 
    def destroy
