@@ -46,7 +46,7 @@ class ContactsController < ApplicationController
       @contact = Contact.find(params[:id])
       @contact.destroy
       
-      flash[:success] = "params[:id]の内容は正常に削除されました"
+      flash[:success] = '内容は正常に削除されました'
       redirect_to contacts_url
    end
    

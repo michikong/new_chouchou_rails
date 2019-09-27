@@ -10,9 +10,16 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render 'layouts/flash_contacts' %>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
 
-      <%= yield %>
-    </div>  </body>
+      <div class="container">
+        <%= render 'layouts/flash_contacts' %>
+        <%= link_to '新規メッセージの投稿', new_contact_path %>
+        <%= link_to 'メッセージ一覧', contacts_path %>
+  
+        <%= yield %>
+      </div>
+    </nav>
+  </body>
 </html>
+
