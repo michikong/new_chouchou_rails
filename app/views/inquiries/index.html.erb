@@ -1,0 +1,9 @@
+<h1>売り上げ一覧</h1>
+
+<ul>
+  <% @inquiries.each do |inquiry| %>
+    <li><%= link_to inquiry.id, inquiry_path(inquiry) %> : <%= inquiry.content %></li>
+  <% end %>
+</ul>
+
+

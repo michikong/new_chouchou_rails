@@ -14,8 +14,11 @@
 
       <div class="container">
         <%= render 'layouts/flash_contacts' %>
-        <%= link_to '新規メッセージの投稿', new_contact_path %>
         <%= link_to 'メッセージ一覧', contacts_path %>
+        <%= link_to '新規メッセージの投稿', new_contact_path %>
+        <%= link_to '売り上げ一覧', inquiries_path %>
+        <%= link_to '売り上げ入力画面', new_inquiry_path %>
+        
   
         <%= yield %>
       </div>

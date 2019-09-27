@@ -1,0 +1,15 @@
+<h1>id: <%= @inquiry.id %> のメッセージ詳細ページ</h1>
+
+<li>ID                   : <%= @inquiry.id %></li>
+<li>メッセージ           : <%= @inquiry.content %></li>
+<li>氏名                 : <%= @inquiry.name %></li>
+<li>フリガナ             : <%= @inquiry.ruby %></li>
+<li>メールアドレス       : <%= @inquiry.email %></li>
+<li>メアド@前            : <%= @inquiry.confirm_email1 %></li>
+<li>メアド@後            : <%= @inquiry.confirm_email2 %></li>
+<li>売り上げ金額            : <%= @inquiry.contact %></li>
+<li>投稿日時             : <%= @inquiry.created_at %></li>
+<li>編集日時             : <%= @inquiry.updated_at %></li>
+
+<%= link_to 'この売り上げ内容を編集する', edit_inquiry_path(@inquiry) %>
+<%= link_to 'このメッセージを削除する', @inquiry, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
