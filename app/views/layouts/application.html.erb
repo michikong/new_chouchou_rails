@@ -14,11 +14,16 @@
 
       <div class="container">
         <%= render 'layouts/flash_contacts' %>
+        <%= link_to 'ホーム', home_index_path %>
+        <%= link_to 'アクセス', access_index_path %>
+        <%= link_to 'ブログ', blog_index_path %>
+        <%= link_to '会社概要', company_index_path %>
+        <%= link_to 'メニュー', menu_index_path %>
         <%= link_to 'メッセージ一覧', contacts_path %>
         <%= link_to '新規メッセージの投稿', new_contact_path %>
         <%= link_to '売り上げ一覧', inquiries_path %>
         <%= link_to '売り上げ入力画面', new_inquiry_path %>
-        
+        <%= link_to '全ての一覧', list_index_path %>
   
         <%= yield %>
       </div>
