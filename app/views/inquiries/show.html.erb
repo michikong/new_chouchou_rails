@@ -1,4 +1,4 @@
-<h1>id: <%= @inquiry.id %> のメッセージ詳細ページ</h1>
+<h1>id: <%= @inquiry.id %> の内容詳細ページ</h1>
 
 <li>ID                   : <%= @inquiry.id %></li>
 <li>メッセージ           : <%= @inquiry.content %></li>
@@ -13,3 +13,4 @@
 
 <%= link_to 'この売り上げ内容を編集する', edit_inquiry_path(@inquiry) %>
 <%= link_to 'このメッセージを削除する', @inquiry, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to '売り上げ一覧', inquiries_path %>
