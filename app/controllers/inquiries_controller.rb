@@ -11,7 +11,7 @@ class InquiriesController < ApplicationController
    end
 
    def new
-      @inquiries = Inquiry.new
+      @inquiry = Inquiry.new
    end
 
    def create
