@@ -11,6 +11,6 @@
 <li>投稿日時             : <%= @inquiry.created_at %></li>
 <li>編集日時             : <%= @inquiry.updated_at %></li>
 
+<%= link_to '売り上げ一覧', inquiries_path %>
 <%= link_to 'この売り上げ内容を編集する', edit_inquiry_path(@inquiry) %>
 <%= link_to 'このメッセージを削除する', @inquiry, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
-<%= link_to '売り上げ一覧', inquiries_path %>

@@ -2,12 +2,13 @@ require 'pry'
 # binding.pry
 
 class ContactsController < ApplicationController
+   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+   
    def index
       @contacts = Contact.all
    end
 
    def show
-      @contact = Contact.find(params[:id])
    end
 
    def new
@@ -27,12 +28,9 @@ class ContactsController < ApplicationController
    end
 
    def edit
-      @contact = Contact.find(params[:id])
    end
 
    def update
-       @contact = Contact.find(params[:id])
-
       if @contact.update(contact_params)
          flash[:success] = '内容は正常に更新されました'
          redirect_to @contact
@@ -43,7 +41,6 @@ class ContactsController < ApplicationController
    end
 
    def destroy
-      @contact = Contact.find(params[:id])
       @contact.destroy
       
       flash[:success] = '内容は正常に削除されました'
@@ -52,6 +49,12 @@ class ContactsController < ApplicationController
    
    # 以降に定義されたメソッドがこのクラス内でのみ使用することを明示
    private
+   
+   
+   # 共有化
+   def set_contact
+      @contact = Contact.find(params[:id])   
+   end
    
    # Strong Parameter
    def contact_params

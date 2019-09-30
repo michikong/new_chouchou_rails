@@ -1,13 +1,13 @@
 require 'pry'
 # binding.pry
 class InquiriesController < ApplicationController
-
+   before_action :set_inquiry, only: [:show, :edit, :update, :destroy]
+   
    def index
       @inquiries = Inquiry.all
    end
 
    def show
-      @inquiry = Inquiry.find(params[:id])
    end
 
    def new
@@ -27,12 +27,9 @@ class InquiriesController < ApplicationController
    end
 
    def edit
-      @inquiry = Inquiry.find(params[:id])
    end
 
    def update
-       @inquiry = Inquiry.find(params[:id])
-
       if @inquiry.update(inquiry_params)
          flash[:success] = '内容は正常に更新されました'
          redirect_to @inquiry
@@ -43,7 +40,6 @@ class InquiriesController < ApplicationController
    end
 
    def destroy
-      @inquiry = Inquiry.find(params[:id])
       @inquiry.destroy
       
       flash[:success] = '内容は正常に削除されました'
@@ -52,6 +48,11 @@ class InquiriesController < ApplicationController
    
    # 以降に定義されたメソッドがこのクラス内でのみ使用することを明示
    private
+   
+   # 共有化
+   def set_inquiry
+      @inquiry = Inquiry.find(params[:id])
+   end
    
    # Strong Parameter
    def inquiry_params
