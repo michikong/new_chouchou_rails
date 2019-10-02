@@ -62,6 +62,7 @@ class ContactsController < ApplicationController
          :content,
          :name, 
          :ruby,
+         :phone_number,
          :email,
          :age,
          :blood,
