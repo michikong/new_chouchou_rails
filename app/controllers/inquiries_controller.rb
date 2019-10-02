@@ -4,7 +4,9 @@ class InquiriesController < ApplicationController
    before_action :set_inquiry, only: [:show, :edit, :update, :destroy]
    
    def index
-      @inquiries = Inquiry.all
+      @inquiries = Inquiry.all.page(params[:page]).per(5)
+      # 降順
+      # @messages = Message.order(id: :desc).page(params[:page]).per(3)
    end
 
    def show
