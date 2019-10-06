@@ -1,3 +1,4 @@
 <% flash.each do |contact_type, contact| %>
-  <div><%= contact %></div>
+  <div lass="alert alert-<%= contact_type %>"><%= contact %></div>
 <% end %>
+

@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>NewChouchouRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-
-      <div class="container">
-        <%= render 'layouts/flash_contacts' %>
-        <%= link_to 'ホーム', home_index_path %>
-        <%= link_to 'アクセス', access_index_path %>
-        <%= link_to 'ブログ', blog_index_path %>
-        <%= link_to '会社概要', company_index_path %>
-        <%= link_to 'メニュー', menu_index_path %>
-        <%= link_to 'メッセージ一覧', contacts_path %>
-        <%= link_to '新規メッセージの投稿', new_contact_path %>
-        <%= link_to '売り上げ一覧', inquiries_path %>
-        <%= link_to '売り上げ入力画面', new_inquiry_path %>
-        <%= link_to '全ての一覧', list_index_path %>
-  
-        <%= yield %>
-      </div>
-    </nav>
+    <%= render 'layouts/navbar' %>
+    
+    <div class="container">
+      <%= render 'layouts/flash_contacts' %>
+      
+      <%= yield %>
+    </div>
   </body>
 </html>
-
