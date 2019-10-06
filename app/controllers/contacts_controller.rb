@@ -4,7 +4,9 @@ class ContactsController < ApplicationController
    before_action :set_contact, only: [:show, :edit, :update, :destroy]
    
    def index
-      @contacts = Contact.all.page(params[:page]).per(5)
+      @contacts = Contact.all.page(params[:page])
+      
+      # @contacts = Contact.all.page(params[:page]).per(5)
       # 降順
       # @messages = Message.order(id: :desc).page(params[:page]).per(3)   
    end
