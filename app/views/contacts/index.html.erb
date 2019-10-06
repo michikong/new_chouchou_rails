@@ -1,9 +1,47 @@
 <h1>メッセージ一覧</h1>
 
-<ul>
-  <% @contacts.each do |contact| %>
-    <li><%= link_to contact.id, contact_path(contact) %> : <%= contact.content %></li>
-  <% end %>
-</ul>
+<% if @contacts.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>タイトル(content)</th>
+        <th>氏名name</th>
+        <th>カタカナruby</th>
+        <th>電話番号phone_number</th>
+        <th>メールアドレスemail</th>
+        <th>年齢age</th>
+        <th>血液型blood</th>
+        <th>性別gender</th>
+        <th>金額payment</th>
+        <th>メッセージcontact</th>
+        <th>@前confirm_email1</th>
+        <th>@後confirm_email2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= link_to contact.id, contact %></td>
+          <td><%= contact.content %></td>
+          <td><%= contact.name %></td>
+          <td><%= contact.ruby %></td>
+          <td><%= contact.phone_number %></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.age %></td>
+          <td><%= contact.blood %></td>
+          <td><%= contact.gender %></td>
+          <td><%= contact.payment %></td>
+          <td><%= contact.contact %></td>
+          <td><%= contact.confirm_email1 %></td>
+          <td><%= contact.confirm_email2 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @contacts %>
+  </div>
+<% end %>
 
-<%= paginate @contacts %>
+<%= link_to '新規メッセージの投稿', new_contact_path, class: "btn btn-primary" %>

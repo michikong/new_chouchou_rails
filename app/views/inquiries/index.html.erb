@@ -1,10 +1,37 @@
 <h1>売り上げ一覧</h1>
 
-<ul>
-  <% @inquiries.each do |inquiry| %>
-    <li><%= link_to inquiry.id, inquiry_path(inquiry) %> : <%= inquiry.content %></li>
-  <% end %>
-</ul>
+<% if @inquiries.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>タイトル(content)</th>
+        <th>氏名name</th>
+        <th>カタカナruby</th>
+        <th>メールアドレスemail</th>
+        <th>@前confirm_email1</th>
+        <th>@後confirm_email2</th>
+        <th>メッセージcontact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inquiries.each do |inquiry| %>
+        <tr>
+          <td><%= link_to inquiry.id, inquiry %></td>
+          <td><%= inquiry.content %></td>
+          <td><%= inquiry.name %></td>
+          <td><%= inquiry.ruby %></td>
+          <td><%= inquiry.email %></td>
+          <td><%= inquiry.confirm_email1 %></td>
+          <td><%= inquiry.confirm_email2 %></td>
+          <td><%= inquiry.contact %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @inquiries %>
+  </div>
+<% end %>
 
-<%= paginate @inquiries %>
-
+<%= link_to '新規メッセージの投稿', new_inquiry_path, class: "btn btn-primary" %>
