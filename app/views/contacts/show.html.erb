@@ -1,21 +1,63 @@
 <h1>id: <%= @contact.id %> のメッセージ詳細ページ</h1>
 
-<li>ID                   : <%= @contact.id %></li>
-<li>メッセージ           : <%= @contact.content %></li>
-<li>氏名                 : <%= @contact.name %></li>
-<li>フリガナ             : <%= @contact.ruby %></li>
-<li>電話番号             : <%= @contact.phone_number %></li>
-<li>メールアドレス       : <%= @contact.email %></li>
-<li>年齢                 : <%= @contact.age %></li>
-<li>血液型               : <%= @contact.blood %></li>
-<li>性別                 : <%= @contact.gender %></li>
-<li>売り上げ             : <%= @contact.payment %></li>
-<li>質問内容             : <%= @contact.contact %></li>
-<li>メアド@前            : <%= @contact.confirm_email1 %></li>
-<li>メアド@後            : <%= @contact.confirm_email2 %></li>
-<li>投稿日時             : <%= @contact.created_at %></li>
-<li>編集日時             : <%= @contact.updated_at %></li>
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @contact.id %></td>
+  </tr>
+  <tr>
+    <th>メッセージ</th>
+    <td><%= @contact.content %></td>
+  </tr>
+  <tr>
+    <th>氏名</th>
+    <td><%= @contact.name %></td>
+  </tr>  <tr>
+    <th>ふりがな</th>
+    <td><%= @contact.ruby %></td>
+  </tr>
+  <tr>
+    <th>電話暗号</th>
+    <td><%= @contact.phone_number %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @contact.email %></td>
+  </tr>  <tr>
+    <th>年齢</th>
+    <td><%= @contact.age %></td>
+  </tr>
+  <tr>
+    <th>血液型</th>
+    <td><%= @contact.blood %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= @contact.gender %></td>
+  </tr>
+    <th>売り上げ</th>
+    <td><%= @contact.payment %></td>
+  </tr>  <tr>
+    <th>質問内容</th>
+    <td><%= @contact.age %></td>
+  </tr>
+  <tr>
+    <th>メアド@前</th>
+    <td><%= @contact.blood %></td>
+  </tr>
+  <tr>
+    <th>メアド@後</th>
+    <td><%= @contact.gender %></td>
+  </tr>
+  <tr>
+    <th>投稿日時</th>
+    <td><%= @contact.created_at %></td>
+  </tr>
+  <tr>
+    <th>更新日時</th>
+    <td><%= @contact.updated_at %></td>
+  </tr>
+</table>
 
-<%= link_to 'メッセージ一覧', contacts_path %>
-<%= link_to 'このメッセージを編集する', edit_contact_path(@contact) %>
-<%= link_to 'このメッセージを削除する', @contact, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to 'このメッセージを編集する', edit_contact_path(@contact), class: 'btn btn-light' %>
+<%= link_to 'このメッセージを削除する', @contact, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
